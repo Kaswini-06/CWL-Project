@@ -1,0 +1,58 @@
+# Task 3: Container Monitoring
+
+## Objective
+
+Monitor Docker container CPU and memory usage and log it with timestamps.
+
+---
+
+## Steps
+
+### 1. Create Directory
+
+```bash
+sudo mkdir -p /opt/container-monitor/logs
+```
+
+### 2. Create Script
+
+```bash
+#!/bin/bash
+
+DATE=$(date "+%Y-%m-%d %H:%M:%S")
+
+docker stats --no-stream --format "{{.Name}} | CPU: {{.CPUPerc}} | MEM: {{.MemUsage}}" >> /opt/container-monitor/logs/monitor.log
+
+echo "Logged at: $DATE" >> /opt/container-monitor/logs/monitor.log
+echo "------------------------" >> /opt/container-monitor/logs/monitor.log
+```
+
+### 3. Make Executable
+
+```bash
+chmod +x /opt/container-monitor/monitor.sh
+```
+
+### 4. Automate with Cron
+
+```bash
+crontab -e
+```
+
+Add:
+
+```bash
+* * * * * /opt/container-monitor/monitor.sh
+```
+
+---
+
+## Logs Location
+
+/opt/container-monitor/logs/monitor.log
+
+---
+
+## Outcome
+
+Automated monitoring of container resource usage every minute.

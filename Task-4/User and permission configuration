@@ -1,0 +1,33 @@
+# Task 4: User & Permissions
+
+## Objective
+
+Restrict access to monitoring logs using a dedicated user.
+
+---
+
+## Steps
+
+### 1. Create User
+
+```bash
+sudo adduser monitoruser
+```
+
+### 2. Assign Ownership
+
+```bash
+sudo chown -R monitoruser:monitoruser /opt/container-monitor
+```
+
+### 3. Set Permissions
+
+```bash
+sudo chmod -R 700 /opt/container-monitor
+```
+
+---
+
+## Outcome
+
+Only the monitoring user has access to logs, improving security.

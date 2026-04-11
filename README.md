@@ -1,5 +1,5 @@
 # CWL-Project
-# DevOps Internship Assignment 🚀
+# DevOps Internship Assignment 
 
  Project Overview
 This project demonstrates core DevOps skills including:

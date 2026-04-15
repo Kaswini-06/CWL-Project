@@ -44,3 +44,8 @@ ssh username@server-ip
 ## Outcome
 
 Successfully configured passwordless SSH login to the server.
+
+
+## Screenshort
+![Uploading {4A55AB7D-49E9-431D-B9E6-208CA948AA06}.png…]()
+
